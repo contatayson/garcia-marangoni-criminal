@@ -1,0 +1,119 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  /* Garcia & Marangoni: Azul Corporativo + Preto + Cinza (mesma identidade do site principal) */
+  --primary: #013A9A;
+  --primary-foreground: #EAEAE8;
+  --radius: 0.65rem;
+  --background: #FFFFFF;
+  --foreground: #020303;
+  --card: #EAEAE8;
+  --card-foreground: #020303;
+  --secondary: #60A5B3;
+  --secondary-foreground: #020303;
+  --muted: #D6D6D6;
+  --muted-foreground: #020303;
+  --accent: #013A9A;
+  --accent-foreground: #EAEAE8;
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --border: #E5E7EB;
+  --input: #F3F4F6;
+  --ring: #013A9A;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  a[href],
+  select:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+/* Destaque do formulário ao chegar nele por um botão "Agendar" */
+@keyframes form-arrive {
+  0%   { transform: scale(1);     box-shadow: 0 0 0 0 rgb(1 58 154 / 0); }
+  30%  { transform: scale(1.025); box-shadow: 0 0 0 8px rgb(1 58 154 / 0.55), 0 0 40px 8px rgb(96 165 179 / 0.35); }
+  100% { transform: scale(1);     box-shadow: 0 0 0 0 rgb(1 58 154 / 0); }
+}
+
+.form-arrive {
+  animation: form-arrive 1.1s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .form-arrive { animation: none; }
+}
+
+/* Faixa de diferenciais rolando em loop (lista duplicada; -50% = exatamente uma cópia) */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marquee 40s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+}
