@@ -36,9 +36,9 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', '${GOOGLE_TAG_ID}');
-            // Conversão "Contato": qualquer clique num link do WhatsApp da página
+            // Conversão "Contato": qualquer clique num link do WhatsApp ou de ligação da página
             document.addEventListener('click', function (e) {
-              var a = e.target instanceof Element && e.target.closest('a[href*="wa.me/"]');
+              var a = e.target instanceof Element && e.target.closest('a[href*="wa.me/"], a[href^="tel:"]');
               if (a) gtag('event', 'conversion', { send_to: '${CONVERSION_CONTATO}' });
             });
           `}
