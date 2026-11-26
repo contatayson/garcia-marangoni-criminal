@@ -56,7 +56,7 @@ export default function UrgencyTotem({ className = '' }: { className?: string })
         </a>
         <a
           href={`tel:+${CALL_PHONE}`}
-          className="inline-flex flex-1 items-center justify-center gap-2.5 rounded-lg bg-primary px-6 py-4 text-base font-semibold text-white shadow-lg shadow-primary/30 transition-all hover:bg-[#a31616] hover:shadow-xl"
+          className="inline-flex flex-1 items-center justify-center gap-2.5 rounded-lg bg-[#E02424] px-6 py-4 text-base font-semibold text-white shadow-lg shadow-[#E02424]/30 transition-all hover:bg-[#c81e1e] hover:shadow-xl"
         >
           <Phone size={18} className="shrink-0" />
           Ligar {CALL_LABEL}

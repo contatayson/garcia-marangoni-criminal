@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={beVietnamPro.className}>
       <head>
-        <style>{`h1,h2,h3,h4,h5,h6{font-family:${fraunces.style.fontFamily},serif}`}</style>
+        <style>{`:root{--font-heading:${fraunces.style.fontFamily},serif}h1,h2,h3,h4,h5,h6{font-family:var(--font-heading)}`}</style>
         <Script src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_TAG_ID}`} strategy="afterInteractive" />
         <Script id="google-tag" strategy="afterInteractive">
           {`

@@ -22,25 +22,25 @@
 }
 
 :root {
-  /* LP Criminal: preto + vermelho de urgência (pedido do cliente). Logo/marca seguem iguais. */
-  --primary: #C81E1E;
+  /* LP Criminal: vinho + creme, com vermelho de urgência nos botões de ação (pedido do cliente). */
+  --primary: #8B1E2D;
   --primary-foreground: #FFFFFF;
   --radius: 0.65rem;
   --background: #FFFFFF;
-  --foreground: #0B0B0C;
-  --card: #F4F2F1;
-  --card-foreground: #0B0B0C;
+  --foreground: #22090E;
+  --card: #F7F1EA;
+  --card-foreground: #22090E;
   --secondary: #EF4444;
   --secondary-foreground: #FFFFFF;
   --muted: #D6D6D6;
   --muted-foreground: #0B0B0C;
-  --accent: #C81E1E;
+  --accent: #8B1E2D;
   --accent-foreground: #FFFFFF;
   --destructive: #DC2626;
   --destructive-foreground: #FFFFFF;
   --border: #E5E7EB;
   --input: #F3F4F6;
-  --ring: #C81E1E;
+  --ring: #8B1E2D;
 }
 
 @layer base {
@@ -62,9 +62,9 @@
 
 /* Destaque do formulário ao chegar nele por um botão "Agendar" */
 @keyframes form-arrive {
-  0%   { transform: scale(1);     box-shadow: 0 0 0 0 rgb(200 30 30 / 0); }
-  30%  { transform: scale(1.025); box-shadow: 0 0 0 8px rgb(200 30 30 / 0.55), 0 0 40px 8px rgb(239 68 68 / 0.35); }
-  100% { transform: scale(1);     box-shadow: 0 0 0 0 rgb(200 30 30 / 0); }
+  0%   { transform: scale(1);     box-shadow: 0 0 0 0 rgb(139 30 45 / 0); }
+  30%  { transform: scale(1.025); box-shadow: 0 0 0 8px rgb(139 30 45 / 0.55), 0 0 40px 8px rgb(239 68 68 / 0.35); }
+  100% { transform: scale(1);     box-shadow: 0 0 0 0 rgb(139 30 45 / 0); }
 }
 
 .form-arrive {
