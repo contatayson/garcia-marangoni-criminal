@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={beVietnamPro.className}>
       <head>
-        <style>{`h1,h2,h3,h4,h5,h6{font-family:${fraunces.style.fontFamily},serif}`}</style>
+        <style>{`:root{--font-heading:${fraunces.style.fontFamily},serif}h1,h2,h3,h4,h5,h6{font-family:var(--font-heading)}`}</style>
         <Script src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_TAG_ID}`} strategy="afterInteractive" />
         <Script id="google-tag" strategy="afterInteractive">
           {`
@@ -36,9 +36,9 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', '${GOOGLE_TAG_ID}');
-            // Conversão "Contato": qualquer clique num link do WhatsApp da página
+            // Conversão "Contato": qualquer clique num link do WhatsApp ou de ligação da página
             document.addEventListener('click', function (e) {
-              var a = e.target instanceof Element && e.target.closest('a[href*="wa.me/"]');
+              var a = e.target instanceof Element && e.target.closest('a[href*="wa.me/"], a[href^="tel:"]');
               if (a) gtag('event', 'conversion', { send_to: '${CONVERSION_CONTATO}' });
             });
           `}
